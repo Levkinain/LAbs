@@ -24,30 +24,39 @@ public class CarRepository extends RepositoryAbstract<Car> implements Repository
      * Конструктор по умолчанию
      */
     public CarRepository() {
+        LOGGER.info("Invoke method");
         repository = new Car[INITIAL_SIZE];
         size = INITIAL_SIZE;
         capacity = 0;
+        LOGGER.debug("create new object Car");
     }
 
     /**
      * Метод выполняющий сортировку  {@code Car [] repository} по полю {@code int id}
      */
     public void sortById() {
+        LOGGER.info("Invoke method");
         Comparator<Car>  comporatorById = new CarComporatorById();
+        LOGGER.debug("sort repository Car by id");
         sorter.sort(repository, comporatorById);
+
     }
 
     /**
      * Метод выполняющий сортировку  {@code Car [] repository} по полю {@code int price}
      */
     public void sortByPrice() {
+        LOGGER.info("Invoke method");
         sorter.sort(repository, new CarComporatorByPrice());
+        LOGGER.debug("sort repository Car by price");
     }
     /**
      * Метод выполняющий сортировку  {@code Car [] repository} по полю {@code int dateManufacture}
      */
     public void sortByYear() {
+        LOGGER.info("Invoke method");
         sorter.sort(repository, new CarComporatorByYear());
+        LOGGER.debug("sort repository Car by year manufacture");
     }
 
     /**
@@ -66,10 +75,10 @@ public class CarRepository extends RepositoryAbstract<Car> implements Repository
      * Метод выполняющий поиск по значению {@code String color}
      *
      * @param color значение типа {@code Integer}, являющееся предекатом (выражением для поиска)
-     * @return объект типа {@code CarRepository}, содержащий объекты типа {@code Сar}
+     * @return объект типа {@code CarRepositorych}, содержащий объекты типа {@code Сar}
      */
     public CarRepository searchByColor(String color) {
-        LOGGER.debug("This method was used");
+        LOGGER.debug("search in car repository object with color: " + color);
         return search((p, a) -> p.getColor().equals(a), color);
     }
 
@@ -80,7 +89,7 @@ public class CarRepository extends RepositoryAbstract<Car> implements Repository
      * @return объект типа {@code CarRepository}, содержащий объекты типа {@code Сar}
      */
     public CarRepository searchByPrice(Integer price) {
-        LOGGER.debug("This method was used");
+        LOGGER.debug("search in car repository object with price: " + price);
         return search((p, a) -> Integer.valueOf(p.getPrice()).equals(a), price);
     }
 
@@ -91,7 +100,7 @@ public class CarRepository extends RepositoryAbstract<Car> implements Repository
      * @return объект типа {@code CarRepository}, содержащий объекты типа {@code Сar}
      */
     public CarRepository searchByManufactureYear(Integer year) {
-        LOGGER.debug("This method was used");
+        LOGGER.debug("search in car repository object with year: " + year);
         return search((p, a) -> Integer.valueOf(p.getYearManufacture()).equals(a), year);
     }
 

@@ -21,7 +21,6 @@ public class Configuration {
     private Configuration() {
         //получаем путь к файлам ресурсов
         String rootPath = "D:/Labs-master/Lab1/src/main/resources/";
-               // "C:/Users/Irina.levkinain/IdeaProjects/LAbs/Lab2/src/main/resources/";
         // получаем путь к нашему ресурсу
         String appConfigPath = rootPath + "configuration.properties";
         //создаем экземпляр класса {@code Properties}, java.util.Properties
