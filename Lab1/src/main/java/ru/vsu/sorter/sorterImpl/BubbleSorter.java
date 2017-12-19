@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * RКласс отвечающий за сортировку объектов методом пузырька
+ * Класс отвечающий за сортировку объектов методом пузырька
  */
 public class BubbleSorter implements Sorter {
     /**
